@@ -1,0 +1,27 @@
+.container-main{
+	display: flex;
+	justify-content: center;
+}
+
+.position{
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	z-index: 100000;
+	margin: auto;
+}
+
+.flash-msn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 800px;
+}
+
+
+
+.hide{
+    margin-top: 110px;
+    text-align: center;
+    }
+}

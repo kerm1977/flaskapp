@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %} 
+
+<div class="container">
+	<hr>
+	<h2>Su busqueda: </h2>
+	<p>{{busqueda}}</p>
+	<!-- <p>{{usuarios}}</p> -->
+
+
+		
+		{%for indice in posteo%}
+			{{posts.id}}
+			{{posts.description}}
+			{{posts.content}}
+			{{posts.poster_id}}
+			{%set indice = indice.title.split()%}
+			{%set indice = indice|string%}
+			{%if busqueda in indice%}
+				Aqui esta {{indice}}
+				
+			{%else%}
+				<p>No se encuentra {{busqueda}}</p>
+			{%endif%}
+		{%endfor%}	
+		
+		
+	
+		
+	
+
+	
+				
+	
+	
+		
+
+		
+
+
+		
+
+
+
+	
+	
+		
+	
+	
+
+
+
+</div>
+
+
+{% endblock %}

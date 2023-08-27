@@ -1,0 +1,74 @@
+.cont-search{
+	margin-top: 200px;
+}
+
+.buscar{
+	position: absolute;
+	padding: 5px;
+	z-index: 1000;
+	margin-top: -135;
+}
+
+.buscar input{
+	margin-top: 120px;
+	width: 38px;
+	height: 40px;
+	padding: 0 20px;
+	font-size: 25px;
+	color: silver;
+	outline: none;
+	border: 1px solid silver;
+	border-radius: 30px;
+	font-family: "Arial"
+}
+
+.btn-ico{
+	position: absolute;
+	top: 133px;
+	width: 55px;
+	padding-left: 4px;
+	right: 0;
+	background: #000 #440080;
+	width: 55px;
+	height: 55px;
+	line-height: 55px;
+	text-align: center;
+	color: black;
+	font-size: 24px;
+	border-radius: 50%;
+	cursor: pointer;
+}	
+
+.buscar:hover input{
+	width: 350px;
+	transition: all .4s ease-in-out;
+}
+
+.buscar input:focus{
+	width: 450px;
+}
+
+.btn-buscar{
+	background: none;
+	border: none;
+	font-size: 22px; /*icono*/
+}
+
+
+@media(max-width: 768px){
+
+	.buscar:hover input{
+		width: 240px;
+		transition: all .4s ease-in-out;
+	}
+	
+	.buscar input:focus{
+		width: 400px;
+	}
+
+	.btn-buscar{
+		background: none;
+		border: none;
+		font-size: 22px; /*icono*/
+	}
+}

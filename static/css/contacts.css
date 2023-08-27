@@ -1,0 +1,37 @@
+.form-signin{
+	font-family: Arial, "Lucida Grande";
+	}
+
+.card{
+	margin: 20px;
+	}
+
+.content{
+	color: black
+}
+
+.contacts{
+	/*margin-top: 300px;*/
+	font-family: Arial, "Lucida Grande";
+	}
+
+.contacts-table{
+	margin-top: 300px;
+	}
+
+.table{
+	background: #f8f9fa;
+	}
+
+.table-head{
+	font-size: 14px;
+	}
+
+
+.container-update{
+	margin-top: 200px;
+	}
+
+.icomoon-contacts-ico{
+	color: grey
+}

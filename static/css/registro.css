@@ -1,0 +1,53 @@
+.container-registro{
+	display: flex;
+	justify-content: center;
+
+}
+
+.label{
+	margin-left: 20px;
+	color: #fcb7af;
+}
+
+
+
+@media(max-width: 768px){
+	.alert_messages{
+		width: 400px;
+		margin-bottom: -20px;	
+	}
+}
+
+.link_register{
+	color: #fa34df;
+	}
+
+.link_register:hover{
+	color: #bc98f3;
+	}
+
+.input{
+	font-family: Arial !important;
+	overflow: hidden;
+	font-size: 20px;
+	}
+
+input-reg{
+	font-family: Arial !important;
+	overflow: hidden;
+	font-size: 20px;
+}
+
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+.button-form{
+	font-family: font-family: Arial, "Lucida Grande" i !important;
+	display: flex;
+	justify-content: center;
+}
+

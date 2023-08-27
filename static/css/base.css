@@ -1,0 +1,12 @@
+html, body, button, *{
+	font-family: Arial, "Lucida Grande";
+	}
+
+html, body{ 
+	box-sizing: border-box; 
+	font-size: 20px;
+	background:#f8f9fa;
+	}
+
+
+

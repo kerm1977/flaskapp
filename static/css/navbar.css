@@ -1,0 +1,79 @@
+nav{
+	position: fixed;
+	z-index: 1000000;
+	left: 0;
+	right: 0;
+	top: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0 5%;
+	height: 100px;
+	background-color:  #f48fb1 ; 
+	/*Color de fondo*/
+}
+
+
+.search_bar{
+	float: left;
+	display: flex;
+	align-items: center;
+}
+.enlaces{
+	float: right;
+	margin-top: 30px;
+}
+
+.icomoon-nav-ico{
+	font-size: 35px;
+	padding: 0px 20px 0px 0px;
+	color: white;
+	}
+
+
+
+@media(max-width: 768px){
+
+	.list-ico{
+		float:right;
+		margin: 23px 5px 0px 0px;
+		padding: 0px 5px 0px 0px;
+		font-size: 35px;
+	}
+
+	.icomoon-nav-ico{
+		font-size: 37px;
+		color: white;
+		margin-left: 0px;
+	}
+
+	nav .list li{
+	list-style: none;
+	float:right;
+	}
+
+
+	nav .list a{
+		display: block;
+		text-transform: uppercase;
+		padding: 15px 25px;
+		font-size: 16px;
+		font-weight: bold;
+		color: #ffffff;
+		text-decoration: none;
+		border-radius: 25px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* 
+Referencia 
+-------------------------------------------
+https://www.youtube.com/watch?v=ksVzzWSKVVI 
+*/

@@ -1,0 +1,216 @@
+{% extends "base.html" %}
+{% block content %} 
+
+
+<!-- Formulario Registro -->
+<div class="container">   		
+ <div class="container-registro">
+    <div class="margin_main">
+            <div class="nav">
+                <ul class="links">
+                    <li class=" Disabled">ESTÁS EN REGISTRO</li>
+                    <li class=" uli signup-active mt-3 mb-5"><a class="link_register mt-5" href="{{ url_for('login')}}">Tengo una cuenta</a></li>
+                    <hr>
+                </ul>
+        	</div>
+
+        <form class="form-signin" action="" method="POST" name="form">
+            {{form.hidden_tag()}}
+
+<!-- CAMPO DE NOMBRE -->
+            <div class="field">
+			  <label class="label">Nombre</label>
+			  <div class="control has-icons-left has-icons-right">
+			  	{{form.username(placeholder="Usuario", class="input  is-rounded", id="username")}}
+			    <span class="icon is-small is-left">
+			      <i class=""></i>
+			    </span>
+			    <span class="icon is-small is-right">
+			      <span class="icon-user"></span>
+			    </span>
+			  </div>
+			  <!-- <p class="help is-success">Nombre de Usuario Correcto</p> -->
+			</div>
+
+
+
+
+
+
+
+
+<!-- CAMPO DE PRIMER APELLIDO -->
+			<div class="field">
+			  <label class="label">Primer Apellido</label>
+			  <div class="control has-icons-left has-icons-right">
+			  	{{form.apellidos(placeholder="Primer Apellido", class="input  is-rounded", id="apellidos")}}
+			    <span class="icon is-small is-left">
+			      <i class=""></i>
+			    </span>
+			    
+			  </div>
+			  <!-- <p class="help is-success">Nombre de Usuario Correcto</p> -->
+			</div>
+
+
+
+
+
+
+
+
+<!-- CAMPO DE SEGUNDO APELLIDO -->
+			<div class="field">
+			  <label class="label">Segundo Apellido</label>
+			  <div class="control has-icons-left has-icons-right">
+			  	{{form.apellidos2(placeholder="Segundo Apellido", class="input  is-rounded", id="apellidos2")}}
+			    <span class="icon is-small is-left">
+			      <i class=""></i>
+			    </span>
+			    
+			  </div>
+			  <!-- <p class="help is-success">Nombre de Usuario Correcto</p> -->
+			</div>
+
+
+
+
+
+
+
+
+<!-- CAMPO DE RESIDENCIA -->
+			<div class="field">
+			  <label class="label">Residencia</label>
+			  <div class="control has-icons-left has-icons-right">
+			  	{{form.residencia(placeholder="Residencia", class="input  is-rounded", id="residencia")}}
+			    <span class="icon is-small is-left">
+			      <i class=""></i>
+			    </span>
+			    <span class="icon is-small is-right">
+			       <span class="icon-location"></span>
+			    </span>
+			   
+			  </div>
+			</div>
+
+
+
+
+
+
+
+
+<!-- CAMPO DE EMAIL -->
+			<div class="field">
+			  <label class="label">Email</label>
+			  <div class="control has-icons-left has-icons-right">
+			    {{form.email(placeholder="Email", class="input  is-rounded", id="email")}}
+			    <span class="icon is-small is-left">
+			      <i class=""></i>
+			    </span>
+			    <span class="icon is-small is-right">
+			       <span class="">@</span>
+			    </span>
+			  </div>
+			  <!-- <p class="help is-danger">This email is invalid</p> -->
+			</div>
+
+
+
+
+
+
+
+
+<!-- CAMPO DE TELEFONO -->
+			<div class="columns ">
+				<div class="field column is-half">
+					<label class="label">Teléfono</label>
+					 	<div class="control has-icons-left has-icons-right">
+						  	{{form.telefono(placeholder="Teléfono", class="input  is-rounded", id="telefono")}}
+						    <span class="icon is-small is-left">
+						      <i class=""></i>
+						    </span>
+							<span class="icon is-small is-right">
+			       				<span class="icon-phone"></span>
+			    			</span>
+
+				  		</div>
+				  <!-- <p class="help is-success">Nombre de Usuario Correcto</p> -->
+				  	</div>
+			
+
+
+
+
+
+
+
+<!-- CAMPO DE CELULAR -->
+		<div class="field column is-half">
+			<label class="label">Celular</label>
+				<div class="control has-icons-left has-icons-right">
+					{{form.celular(placeholder="Celular", class="input  is-rounded", id="celular")}}
+					<span class="icon is-small is-left">
+						<i class=""></i>
+					</span>
+					<span class="icon is-small is-right">
+			       		<span class="icon-mobile"></span>
+			    	</span>
+				</div>
+				<!-- <p class="help is-success">Nombre de Usuario Correcto</p> -->
+				</div>
+			</div>
+				
+
+
+
+
+
+
+
+<!-- CAMPO DE PASSWORD-->
+			<div class="field">
+			  <label class="label">Password</label>
+			  <div class="control has-icons-left has-icons-right">
+			    {{form.password(placeholder="Password", class="input input-reg is-rounded", id="password", type="password" )}}
+			  
+			    <i class="bx icon is-small is-right icon-eye" onclick="myFunction()"></i> 
+			  </div>
+			  <!-- <p class="help is-danger">This email is invalid</p> -->
+			</div>
+
+
+
+
+
+
+
+
+<!-- CAMPO DE CONFIRMACION PASSWORD -->
+			<div class="field">
+			  <label class="label">Confirmar Password</label>
+			  <div class="control has-icons-left has-icons-right">
+			  	{{form.confirmpassword(placeholder="Confirmar Password", class="input input-reg is-rounded", id="confirmpassword", type="password" )}}
+			    <i class="bx icon is-small is-right icon-eye" onclick="myFunction2()"></i>
+			  </div>
+			  <!-- <p class="help is-danger">This email is invalid</p> -->
+			</div>
+
+
+
+
+
+
+
+
+<!-- BOTON REGISTRO -->
+  			<hr>
+            <button type="submit" name="Registrarme" class="button is-link is-light mt-5">Registrarme</button>
+
+	        		</form>
+	        		</div>
+	      		</center>
+	    	</div>
+{% endblock %}

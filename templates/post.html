@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- |safe se encarga de reconocer caracteres como negritas, itálicas h1-h6 
+			formatos etc sin eso sale la etiqueta pura -->
+
+<div class="container container-post">
+	{%for post in post%}
+
+
+		<div class="box">
+	  <article class="media">
+	    <div class="media-left">
+	      <figure class="image is-64x64">
+	        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+	      </figure>
+	    </div>
+	    <div class="media-content">
+	      <div class="content">
+	      	{{post.title|safe}}
+	        <p>
+	          <strong>{{post.user.username}}</strong> <small>{{post.slug|safe}}</small> 
+	          <br>
+	        {{post.content|safe}}
+	        </p>
+
+	      <br>{{post.date_posted.strftime('%d-%m-%Y')}}<br>
+
+	      </div>
+	      <span class="level is-mobile">
+	        <div class="level-left">
+	          <a class="level-item" aria-label="reply">
+	            <span class="icon is-small">
+	              <i class="fas fa-reply" aria-hidden="true"></i>
+	            </span>
+	          </a>
+	          <a class="level-item" aria-label="retweet">
+	            <span class="icon is-small">
+	              <i class="fas fa-retweet" aria-hidden="true"></i>
+	            </span>
+	          </a>
+	          <a class="level-item" aria-label="like">
+	            <span class="icon is-small">
+	              <i class="fas fa-heart" aria-hidden="true"></i>
+	            </span>
+	          </a>
+	          <a class="level-item" aria-label="">
+	          	<a href="{{url_for('posts', id=post.id)}}">
+		            <i class="" aria-hidden="true">VER MAS</i>
+	             </a>
+	          </a>
+
+	           <a class="level-item" aria-label="">
+	          	<a href="{{url_for('add_post', id=post.id)}}">
+		            <i class="" aria-hidden="true">CREAR POST</i>
+	             </a>
+	          </a>
+	          
+	          	          <a class="level-item" aria-label="">
+	          	<a href="{{url_for('edit_post', id=post.id)}}">
+		            <i class="" aria-hidden="true">EDITAR</i>
+	             </a>
+	          </a>
+
+	          <a class="level-item" aria-label="">
+	          	<a href="{{url_for('delete_post', id=post.id)}}">
+		            <i class="" aria-hidden="true">BORRAR</i>
+	             </a>
+	          </a>
+
+	        </div>
+	      </span>
+	    </div>
+	  </article>
+	</div>
+	{%endfor%}
+</div>
+
+
+{% endblock %}

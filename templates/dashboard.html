@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %} 
+
+<div class="container dashboard">
+	<aside class="menu">
+	  <p class="menu-label">
+	    Configuración General
+	  </p>
+	  {% if current_user.is_authenticated %}
+  		<strong>NOMBRE: </strong>{{ current_user.username }} {{current_user.apellidos}} {{current_user.apellidos2}}
+  		<br>
+  		<ul>
+  		<li><strong>EMAIL:</strong>{{current_user.email}}</li>
+  		<li>{{current_user.residencia}}</li>
+  		<li>{{current_user.telefono}}</li>
+  		<li>{{current_user.celular}}</li>
+  		</ul>
+	   {% endif %}
+
+	<hr>	
+	  <ul class="menu-list">
+	    <li>
+	      <a class="has-background-danger-light"><span class=" icomoon-dash-ico icon-profile"></span>Mi Perfil</a>
+	      <ul>
+	        <li>
+	        	<a href="{{url_for('update_profile', id=current_user.id)}}"><span class="icomoon-dash-ico icon-pencil"></span> Modificar Perfil</a>
+	        </li>
+	     </ul>
+	    </li>
+	  </ul>
+
+	  <br>   
+
+	<hr>	
+	  <ul class="menu-list">
+	    <li>
+	      <a class="has-background-danger-light"><span class=" icomoon-dash-ico fas fa-solid fa-address-book"></span>Administrador de Usuarios</a>
+	      <ul>
+	        <li><a href="{{url_for('registro')}}"><span class="icomoon-dash-ico icon-user-plus"></span> Agregar usuarios</a></li>
+	        <li><a href="{{url_for('contacts')}}"><span class="icomoon-dash-ico icon-user-minus"></span>Borrar y editar usuarios</a></li>
+	      </ul>
+	    </li>
+	  </ul>
+
+	  <br>
+
+	  <ul class="menu-list">
+	    <!-- <li><a>Team Settings</a></li> -->
+	    <li>
+	      <a class="has-background-danger-light"><span class=" icomoon-dash-ico icon-quill"></span>Administrador de Posts</a>
+	      <ul>
+	        <li><a href="{{url_for('add_post')}}"><span class="icomoon-dash-ico icon-pencil"></span> Crear Posts</a></li>
+	        <li><a href="{{url_for('post')}}"><span class="icomoon-dash-ico icon-bin"></span>Borrar y editar Posts</a></li>
+	         <li><a href="{{url_for('advanceSearch')}}"><span class="icomoon-dash-ico icon-binoculars"></span>Buscar Posts</a></li>
+
+	      </ul>
+	    </li>
+	    <li><a href="{{url_for('logout')}}"><span class="icomoon-dash-ico icon-switch"></span><strong>Cerrar Sesion</strong></a></li>
+	    <!-- <li><a>Invitations</a></li>
+	    <li><a>Cloud Storage Environment Settings</a></li>
+	    <li><a>Authentication</a></li> -->
+	  </ul>
+	  <!-- <p class="menu-label">
+	    Transactions
+	  </p>
+	  <ul class="menu-list">
+	    <li><a>Payments</a></li>
+	    <li><a>Transfers</a></li>
+	    <li><a>Balance</a></li>
+	    <li><a>Invitations</a></li>
+	    <li><a>Cloud Storage Environment Settings</a></li>
+	    <hr>
+	    
+	  </ul> -->
+	</aside>
+</div>
+
+{% endblock %}

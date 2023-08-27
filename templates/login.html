@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %} 
+
+
+<!-- Formulario Registro -->
+<div class="container">
+    <div class="container-login ">
+    	<div class="margin_main">
+            <div class="nav">
+                <ul class="links">
+                    <li class=" Disabled">ESTÁS EN LOGIN</li>
+                    <li class=" uli signup-active mt-3 mb-5"><a class="link_register mt-5" href="{{ url_for('registro')}}">Registrarme</a></li>
+                </ul>
+                <hr>
+        	</div>
+
+        <form class="form-signin" action="" method="POST" name="form">
+            {{form.hidden_tag()}}
+
+            <div class="field">
+			  <label class="label">Email</label>
+			  <div class="control has-icons-left has-icons-right">
+			    {{form.email(placeholder="Usuario", class="input  is-rounded", id="email").lower()}}
+			    <span class="icon is-small is-left">
+			      <i class=""></i>
+			    </span>
+			    <span class="icon is-small is-right">@</span>
+			  </div>
+			</div>
+
+			<div class="field">
+			  <label class="label">Password</label>
+
+			  <div class="bx control has-icons-left has-icons-right">
+			    {{form.password(placeholder="Password", class="input is-rounded", id="password", type="password" )}}
+			  
+			    <i class="bx icon is-small is-right icon-eye" onclick="myFunction()"></i> 
+			    	
+			  		
+			  </div>
+			  <!-- <p class="help is-danger">This email is invalid</p> -->
+			</div>
+	
+			<label class="link_register mt-5 mb-5">
+			  <input type="checkbox">
+			  	Recordarme
+			</label>
+
+           
+            <div class="uli signin-active text-center">
+
+            <button type="submit" name="Ingresar" class="button is-link is-light mt-5">Ingresar</button>
+        	
+        </form>
+
+            <div class="forgot is-primary">
+                <hr>
+                <a class="link_register" href="#">Olvidó su contraseña?</a>
+            </div>
+        </div>
+      </center>
+    </div>
+    </div>
+{% endblock %}

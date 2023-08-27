@@ -1,0 +1,13 @@
+.dashboard{
+	margin-top: 100px;
+	}
+
+.icomoon-dash-ico{
+	margin-right: 20px;
+	font-size: 28px;
+}
+
+@media(max-width: 768px){
+	.dashboard{
+		margin: 120 10 10 20;
+	}

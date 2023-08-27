@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %} 
+
+<div class="container cont-search">
+	<hr>
+	<h2>Su busqueda: </h2>
+
+
+	
+	{%for post in posts%}
+		<a href="{{url_for('posts',id=post.id)}}">{{post.title|safe}} <br></a>
+		{{post.description|safe}} <br>
+		{{post.content|safe}} <br>
+		{{post.user.username|safe}}
+		<hr>
+	{%else%}
+		{{busqueda}} no se encuentra <br>
+
+
+		<a href="{{url_for('advanceSearch')}}">BUSQUEDA DETALLADA</a>
+
+	{%endfor%}	
+</div>
+
+
+{% endblock %}

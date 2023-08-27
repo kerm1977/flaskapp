@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container ">
+    <div class="column">
+        Cantidad de Personas registradas {{users}}
+    </div>
+</div>
+
+<div class="container contacts">
+{%for items in values%}
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+        </figure>
+      </div>
+
+      {%if current_user.id == items.id %}
+      <div class="media-content center">
+        <h1>ACTIVO</h1>
+        <p class="title is-4">{{items.username.title()}} {{items.apellidos.title()}} {{items.apellidos2.title()}}</p>
+        <p class="subtitle is-6">{{items.email}}</p>
+      </div>
+      {%else%}
+        <div class="media-content">
+        <p class="title is-4">{{items.username.title()}} {{items.apellidos.title()}} {{items.apellidos2.title()}}</p>
+        <p class="subtitle is-6">{{items.email}}</p>
+      </div>
+      {%endif%}
+
+    </div>
+
+    <div class="content">
+       <p><span class=" icomoon-contacts-ico icon-phone mt-5"></span>
+                    {%if items.telefono%}
+                    {{items.telefono}}
+                    {%else%}
+                    {%endif%}
+        
+        <span class=" icomoon-contacts-ico icon-mobile2"></span>   
+
+                    {%if items.celular%}
+                    {{items.celular}}
+                    {%else%}
+                    {%endif%}</p>
+                  
+      <footer class="card-footer">
+      {%if current_user.id == items.id %}
+
+        <a href="{{url_for('registro')}}" class="card-footer-item">
+        Agregar Usuario
+        </a>
+        
+        <a href="{{url_for('update', id=items.id)}}"class="card-footer-item">
+        Editar Contacto<i hidden>{{items.id}}</i>
+        </a>
+
+        <!-- si el id del usuario actual es igual al id de la base de datos quita el botón para que no se pueda autoborrar -->
+        <!-- descomentar para que se vea el botón de borrar en el usuario activo -->
+      
+      {%elif current_user.id != items.id %}
+        <!--  <a href="{{url_for('registro')}}" class="card-footer-item">
+        Agregar Usuario
+        </a>
+        
+        <a href="{{url_for('update', id=items.id)}}"class="card-footer-item">
+        Editar Contacto<i hidden>{{items.id}}</i>
+        </a>
+
+        <a href="{{url_for('delete', id=items.id)}}" class="card-footer-item" onclick="return ConfirmDelete()">     Borrar Contacto<i hidden></i>
+        </a> -->
+
+      {%else%}       
+        <a href="{{url_for('delete', id=items.id)}}" class="card-footer-item" onclick="return ConfirmDelete()">     Borrar Contacto<i hidden></i>
+        </a>
+        {%endif%}
+ 
+
+      </footer>      
+    </div>
+  </div>
+</div>
+
+
+{%endfor%}
+</div>
+{% endblock %}

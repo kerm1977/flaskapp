@@ -1,0 +1,56 @@
+*{
+	font-family: Arial, "Lucida Grande";
+}
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	transition: 0.6%;
+	padding: 40px 100px;
+	z-index: 100000;
+
+}
+
+header.sticky{
+	padding: 20px 100px;
+	background: orange;
+	opacity: 0.95;
+	color: white;
+}
+
+.search{
+	margin-right: 70%;
+	padding-top: 38px;
+	position: fixed;
+}
+
+
+
+header .ul-sticky{
+	position:relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header .ul-sticky li{ 
+	position: relative;
+	list-style: none;
+	padding-left: 40px;
+}
+
+header .ul-sticky li a{
+	position: relative;
+	margin: 0 15px;
+	text-decoration:none;
+	color: grey;
+	letter-spacing:2px;
+	font-weight: 500px;
+	transition: 0.6s;
+}
+

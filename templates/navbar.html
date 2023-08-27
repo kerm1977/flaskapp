@@ -1,0 +1,41 @@
+<nav>
+    <div class="search_bar">
+        <form  method="POST" action="{{url_for('search')}}">
+                {{form.hidden_tag()}}
+                <div class="search">
+                    
+                    <div class="buscar">
+                        <input class="" type="text" placeholder="Buscar" name="searched" id="searched" required>
+
+                        <div class="btn-ico">
+                            <button type="submit" value="buscar" class="btn-buscar" id="buscar">
+                                <span class="icon-search"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+
+    <div class="enlaces">
+           <!-- si el usuario está logueado desaparece el icono para iniciar sesion -->
+            {%if current_user.is_authenticated%}
+                <a href="{{url_for('dashboard')}}"><i class="icomoon-nav-ico icon-meter"></i></a>
+            {%else%}
+                <a href="{{url_for('advanceSearch')}}"><i class="icomoon-nav-ico icon-eye"></i></a>
+                <a href="{{url_for('login')}}"><i class="icomoon-nav-ico icon-user-plus"></i></a>
+                <a href="{{url_for('dashboard')}}"><i class="icomoon-nav-ico icon-meter"></i></a>
+            {%endif%}
+        
+        </ul>
+
+        
+
+        <label for="toogle" class="icon-bars">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
+
+    </div>
+</nav>
